@@ -1,0 +1,1 @@
+print(sum([n for n in range(int(input())+1)]))
