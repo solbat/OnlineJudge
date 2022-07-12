@@ -18,8 +18,9 @@ for i in range(t):
 for i in range(t):
     for candidate in testcases[i]:
         for j in range(len(testcases[i])):
-            if candidate[0] < testcases[i][j][0] and candidate[1] < testcases[i][j][1]:
-                answer[i][j] = 0
+            if answer[i][j] == 1:
+                if candidate[0] < testcases[i][j][0] and candidate[1] < testcases[i][j][1]:
+                    answer[i][j] = 0
 
 for i in range(t):
     print(sum(answer[i]))
