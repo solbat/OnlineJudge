@@ -1,11 +1,17 @@
-import heapq
+import sys, heapq
+input = sys.stdin.readline
 
 n = int(input())
+data = sorted([list(map(int, input().split())) for _ in range(n)])
 
-time = [0]*int(1e9)
-for i in range(n):
-    a, b = map(int, input().split())
-    for j in range(a, b):
-        time[j] += 1
+room = []
+heapq.heappush(room, data[0][1])
 
-print(max(time))
+for i in range(1, n):
+    if data[i][0] < room[0]:
+        heapq.heappush(room, data[i][1])
+    else:
+        heapq.heappop(room)
+        heapq.heappush(room, data[i][1])
+
+print(len(room))

@@ -1,7 +1,12 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 
-weights = []
-for i in range(n):
-    weights.append(int(input()))
+weights = sorted([int(input()) for _ in range(n)])
 
-weights.sort()
+answer = 0
+for i in range(n):
+    answer = max(answer, weights[i]*(n-i))
+
+print(answer)
