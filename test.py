@@ -29,6 +29,3 @@ def bfs(graph, start, visited):
                 visited[i] = True
 
 n, m, start = map(int, input().split())
-
-
-
