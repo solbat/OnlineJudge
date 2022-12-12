@@ -31,3 +31,18 @@
             for i in 0..<n { ... } // n이 0보다 작으면 에러!
             for i in 1..<n/2 { ... } // n이 0이나 1이면 에러!
             ```
+            
+
+### Array repeating with flatMap
+
+- 임의의 배열을 연속적으로 복제하여 하나의 배열을 생성하고자 할 때
+- **예시**
+    - Array(repeating: [1,2,3], count: 10).flatMap { $0 }
+    - [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+### 정수 각 자리수 더하기
+
+- String(n).map { Int(String($0))! }.reduce(0, +)
+    - String을 map할 수 있다!
+    - 그러나 map에서 ‘String.Element’ (aka Character)이 입력된다.
+    - 따라서 String으로 감싸준 후 Int로 변환해야 함
