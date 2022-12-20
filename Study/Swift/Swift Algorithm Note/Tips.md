@@ -1,8 +1,3 @@
-# Swift 알고리즘 노트
-
-> Swift 언어로 알고리즘 코딩테스트를 치루기 위해 필요한 문법, 코드, 팁을 정리한 노트입니다. by solbat
-> 
-
 ### Range
 
 - **Range** : `0..<5`
@@ -45,4 +40,4 @@
 - String(n).map { Int(String($0))! }.reduce(0, +)
     - String을 map할 수 있다!
     - 그러나 map에서 ‘String.Element’ (aka Character)이 입력된다.
-    - 따라서 String으로 감싸준 후 Int로 변환해야 함
+    - Character를 직접 Int화할 수 없으므로, String으로 감싸준 후 Int로 변환해야 한다!
